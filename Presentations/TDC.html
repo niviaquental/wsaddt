@@ -45,11 +45,7 @@
 				</section>
 
 				<section>
-					<h2>Trilha Banco de dados</h2>
-				</section>
-
-				<section>
-					<h2>Trilha Android</h2>
+					<h2>Trilha Android (06/07)</h2>
 				</section>
 				
 				<section>
@@ -111,314 +107,431 @@
 				</section>	
 
 				<section>				
+					<h2>Accessibilidade</h2>
+					<ul>
+
+						<li>Talkback, switch access, braille</li>
+						<li>Cuidado com ImageButtons, ImageViews,  Checkboxes sem texto</li>
+						<li>contentdescription - pode ser &quot;@null&quot; e importantforaccessibility=&quot;no&quot para imagens decorativas (API 16)</li>
+						<li>É possível agrupar 2 labels para serem lidos juntos</li>						
+						<li>Float Action Button - use setAccessibilityTraversalBefore() para que seja lido primeiro</li>
+						<li>AccessibilityEvent - para tratar views que aparecem em tempo de execução</li>
+						<li>App <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.accessibility.auditor&hl=pt_BR">Accessibility Scanner</a>.</li>						
+
+					</ul>
+				</section>					
+
+				<section>				
+					<h2>Testes Automatizados</h2>
+					<ul>
+
+						<li>Jacoco - para verificar cobertura</li>
+						<li>Uso de mocking ou stub</li>
+						<li>No gradle, em dependencies: test:compile</li>
+						<li><a href="http://robolectric.org/">Roboletric</a> - provê mocks para testes a partir da IDE- alternativa ao uso de instrumentação sem emulador</li>						
+						<li><a href="https://developer.android.com/training/testing/ui-testing/espresso-testing.html">Espresso</a> - a partir da API 18</li>						
+						<li><a href="http://www.androidpolice.com/2016/05/18/android-studio-2-2-preview-announced-with-a-new-layout-designer-test-recording-with-auto-generated-espresso-code-and-much-more/">Expresso recorder</a> - parece muito novo</li>						
+						<li></li>						
+					</ul>
+				</section>
+				
+				<section>
+					<h2>Trilha Mobile (07/07)</h2>
+				</section>				
+
+				<section>				
+					<h2><a href="http://slides.com/vcavalcante/porqueapphibridostdc2016#/">Aplicativos híbridos</a></h2>
+					<ul>
+
+						<li>Aplicativos web ao invés de nativos com API javascript</li>
+						<li>Recomenda-se diminuir interações com a DOM</li>						
+						<li>Animação, melhor usar só css</li>						
+						<li>Evitar carregar tudo na página inicial</li>		
+						<li>Tecnologias</li>												
+						<ul>
+							<li><a href="https://www.nativescript.org/">Native Script</a> permite acessar features Android, IOS</li>
+							<li><a href="https://crosswalk-project.org/">Crosswalk</a></li>
+							<li><a href="https://crosswalk-project.org/">Cordova</a></li>
+							<li><a href="http://ionicframework.com/">Ionic</a></li>
+							<li><a href="http://vanilla-js.com/">Vanilla JS</a></li>
+					
+						</ul>	
+												
+					</ul>
+				</section>
+				
+				<section>				
+					<h2>Automação em Aplicativos híbridos</a></h2>
+					<ul>
+
+						<li><a href="http://appium.io/">Appium</a> - baseado em Selenium para Mobile</li>
+						<li>Uso de chrome:inspect para inspecionar devices conectados</li>
+						<li><a href="http://calaba.sh/">Calabash</a> - Usa cucumber (equivale ao behave do selenium), mas não é obrigado</li>
+						<li></li>						
+					</ul>
+				</section>
+				
+				<section>				
+					<h2><a href="https://get.fabric.io/">Fabric</a></h2>
+					<ul>
+
+						<li>Ferramenta do Twitter</li>
+						<li>Analise de comportamento e uso da API</li>
+						<li>Ajuda a levar conteúdo do twitter para apps</li>											
+					</ul>
+				</section>
+												
+				<section>				
+					<h2><a href="https://firebase.google.com/">Firebase</a></h2>
+					<ul>
+
+						<li>Kit de ferramentas para IOS e Android</li>
+						<li>Serviço de analytics com estatísticas de uso (como o flurry)</li>
+						<li>APIs de autenticação normal e para google, fabebook, Twitter, github</li>
+						<li>Database remoto (serverless) baseado em nosql [AlÔ Financial!]</li>
+						<li>Configuração remota</li>
+						<li>Crash reporting</li>						
+						<li>Notifications (baseado em GCM, que agora é FCM) - pode testar envio de push do próprio console</li>				
+						<li>Planos gratutio, assinaturas e pay-as-you-go</li>				
+					</ul>
+				</section>
+												
+				<section>				
+					<h2>Desenvolvimento nativo</h2>
+					<ul>
+
+						<li>Geração de código para android, IOS</li>
+						<li>IDE <a href='https://www.embarcadero.com/br/products/rad-studio'>RAD Studio</a> (criado pela Embarcadeiro)</li>
+						<li>Para geração de executáveis, sem ambiente de runtime</li>
+					</ul>
+				</section>	
+
+				<section>				
+					<h2>Dados Sigilosos</h2>
+					<ul>
+
+						<li>Conhecer libs e mantê-las atualizadas</li>
+						<li>Armazenar dados sensíveis encriptados</li>
+						<li>Guardar apenas o necessário</li>
+						<li>Se vai manter na memória,use char[] ao invés de String</li>
+					</ul>
+					<blockquote  style="font-size:25px" cite="http://docs.oracle.com/javase/6/docs/technotes/guides/security/crypto/CryptoSpec.html#PBEEx">
+						&ldquo;It would seem logical to collect and store 
+						the password in an object of type java.lang.String. 
+						However, here's the caveat: Objects of type String are immutable, i.e., there are no methods 
+						defined that allow you to change (overwrite) or zero out the contents of a String after usage. This feature makes String objects unsuitable for storing security sensitive information such as user passwords. 
+						You should always collect and store security sensitive information in a  char array instead.&rdquo;
+					</blockquote>
+					
+				</section>
+
+				<section>				
+					<h2><a href='https://developer.android.com/training/location/geofencing.html'>GeoFencing no Android</a></h2>
+					<ul>
+
+						<li>Define perímetros virtuais usando conheciento de localização de usuário</li>
+						<li>Gera eventos quando usuário interage com esse perímetro</li>
+						<li>Eventos: entrada no perímetro, permanência (dwel) e saída</li>
+						<li>Para acertar mais em anúncios, fornecer info mais relevante</li>
+						<li>Windows phone tb tem </li>
+						<li>[Alô Rio 2016!]</li>	
+						<li><a href='https://developers.google.com/awareness/'>Google awareness API</a> para APIs baseadas em contexto</li>						
+					</ul>
+				</section>		
+
+				<section>				
+					<h2>Progressive Web Apps</h2>
+					<ul>
+						<li>Fazer parecer um apk para o usuário (com chrome)</li>
+						<li>Materialize CSS (estilos de material design)</li>
+						<li>Single page App</li>
+						<li>APIs offline (<a href='http://www.html5rocks.com/en/tutorials/appcache/beginner/'>application cache API</a></li>
+						<li>Scan de código de barra</li>	
+						<li>Push notificaitions na web</li>	
+						<li>Web app instalável (criar atalho na home screen, a barra de endereços não aparece - tem que criar um json para isso)</li>							
+						<li>O chrome pode ser configurado para exibir banners apenas após uma qtde de acessos ou tempo de permanência</li>	
+						<li>[Alô Ambassador!]</li>						
+					</ul>
+				</section>					
+				
+				<section>				
+					<h2>Building for billions</h2>
+					<ul>
+
+						<li>O próximo bilhão de usua´rios virá de países emergentes</li>
+						<li>Considerar rede lenta</li>
+						<ul>
+							<li>Ajustar comportamento pela requisição; priorização de tráfego;</li>
+							<li>Tratar múltiplos toques [Alô Heroes!]</li>
+							<li>Uso de cache</li>							
+						</ul>
+						<li>Otimizar imagens</li>
+						<li>Experiência offline</li>
+						<li>Vários tamanhos e densidades (porting)</li>
+							
+					</ul>
+				</section>	
+				
+				<section>				
+					<h2>Building for billions</h2>
+					<ul>
+						<li><a href='https://developer.android.com/studio/profile/am-memory.html'>Otimizar uso da memória (Android Studio Memory monitor)</a></li>
+						<li><a href='https://developer.android.com/guide/topics/data/data-storage.html'>Smart storage usage (use cache do android)</a></li>
+						<li>Backward compatibility (android support e google play srevices)</li>
+						<li>APK size (manter até 10MB), use proguard (se necessário um apk/target)[Alô Anima Togheter!]</li>
+						<li>Consumo de bateria</li>
+						<ul>
+							<li>use GCM ao invés de requsisões</li>
+							<li>eliminar wakeups desnecessários</li>
+							<li>agrupar requisições de rede</li>
+						</ul>						
+					</ul>
+				</section>	
+				<section>				
+					<h2>Building for billions</h2>
+					<ul>
+						<li>UI rápida e responsiva</li>
+						<ul>
+							<li>cuidado com FPS (60 - há ferramentas para medição)</li>
+							<li>Feedback de touch</li>
+							<li>Splash screen</li>
+							<li><a href='http://android-developers.blogspot.com.br/2015/05/android-design-support-library.html'>Android Design Support Library</a> e aderência ao material design</li>						
+						</ul>
+						<li>Localization e Internationalization</li>
+						<li>Usar fontes apropriadas para idiomas com alfabetos não romanos</li>
+					</ul>
+				</section>				
+					
+				<section>
+				<h2>Trilha JavaEE (06/07)</h2>
+				</section>	
+				
+				<section>				
+					<h2><a href='https://community.oracle.com/docs/DOC-998210'>Docker e Java EE</a></h2>
+					<ul>
+
+						<li>Polêmica Java EE e Oracle</li>
+						<li>Docker - container para abstrair o local de deploy (sua máquina ou nuvem)</li>
+						<li>Abstrai o tipo de container (apache, glassfish, weblogic ...)</li>
+						<li>Dá pra configurar o load balancer</li>	
+						<li>Ferramentas de orquestração (amazon, softlayer, etc)</li>
+						
+					</ul>
+				</section>
+
+				<section>				
+					<h2>CDI 2.0</h2>
+					<ul>
+
+						<li>Framework para injeção de dependência (como o spring)</li>
+						<li>Ciclo de vida bem definido</li>
+						<li>Integração com expression language</li>	
+						<li>Object decoration / Typesafe Interseptor Binding / Interseptor para Java EE specs</li>						
+						<li>Event Notification Model (@Observer, @Priority)</li>
+					</ul>
+				</section>	
+
+				<section>				
+					<h2>Hibernate 5</h2>
+					<ul>
+
+						<li>Standard Service Register Builder mo lugar do SessionFactory</li>
+						<li>Novos tipos do Java 8 (DateTime APIs)</li>
+						<li>Tipos Genéricos do Java 5,6,7 e AutoCloseable (try/catch, não precisa mais dar close explicitamente)</li>
+						<li>ScrollableResults</li>						
+						<li>Bytecode augmentation</li>
+						<li>Gerencia automaticamente os 2 lados do relacionamento</li>
+						<li>Attribute converter (Enum sem annotation @Enumerated)</li>
+					</ul>
+				</section>
+				
+				<section>				
+					<h2>Hibernate 5</h2>
+					<ul>
+						<li>@Generatedvalue (strategy=auto) pode usar o UUID</li>						
+						<li>Hibernate Search (permite consultas textuais, indexar blob (como no google) </li>
+						<li>Backend elastic search, lucene 5, melhorias de performance </li>						
+						<li>@Spatial, @INdexed, @Latitude @Logitude [Alô Heroes!]</li>						
+						<li>Hibernate  OGM (Object Grid Mapper) -  para banco nosql</li>
+						<li>Hibernate Envers (para versionamento e auditoria)</li>						
+					</ul>
+				</section>				
+
+				<section>
+					<h2>Trilha Banco de dados (05/07)</h2>
+				</section>
+
+				<section>				
+					<h2>Big data e OLTP juntos: Polybase</h2>
+					<ul>
+						<li>Windows azure blob storage - o cluster (HD Insight cluster) só serviria para processar os dados e não armazenar, barateando o custo de uso)</li>
+						<li>Polybase</li>
+						<ul>
+							<li>Mapeia SQL Server com o ambiente de big data</li>
+							<li>Recentemente disponível em distribuições SQL Server</li>
+							<li>Storage é lido como tabelas</li>
+							<li>Pode se conectar com blob storage sem o cluster estar no ar</li>			
+						</ul>
+						
+					</ul>
+				</section>
+				
+				
+				<section>				
+					<h2>Polybase</h2>
+					<ul>
+
+						<li>Pode se conectar ao master do hadoop (nesse caso o polybase cria um job - jar - para rodar lá. Isso se chama pushdown)</li>
+						<li>Você configura como será a conversão de dados do storage para SQL (ex mapear CSV para &quot;Create Table&quot;)</li>
+						<li>Necessário criar credencial se o storage tiver autenticação kerberos</li>
+						<li>As tabelas criadas são temporárias</li>
+						
+					</ul>
+				</section>
+
+				<section>				
+					<h2>Medição e gerenciamento com SQL Server</h2>
+					<ul>
+						<li>Uso do perfmon (add counters -> physical disk)</li>
+						<li>Configurar o paralelismo do SQL Servercom 'maxdop' (se > 5, é pq usa paralelismo) e 'cost of threshold'(ver relação entre os 2)</li>
+						<li>Por default, o SQL server é configurado para usar toda a memória da máquina</li>
+						<li>O ideal é delimitar (mas requer estudo de como você usa a máquina)</li>	
+						<li>SQL monitor</li>
+					</ul>
+				</section>
+
+				<section>				
+					<h2>Cobertura de código de procedures TSQL</h2>
+					<ul>
+						<li>SQLCC - projeto descontinuado</li>
+						<li>Demo no youtube (youtu.be/inZHr63-ec0)</li>
+						<li>Cobertura de testes unitários de TSQL</li>				
+					</ul>
+				</section>
+			
+				<section>				
+					<h2>Influx DB</h2>
+					<ul>
+
+						<li>Banco de dados baseado em série temporal</li>
+						<li>Baseado em nosql</li>
+						<li>Outros exemplos: Open TSDB, Atlas (usado pela Netflix), Prometheus</li>
+						<li>Escrta e leitura com REST (não tem update, delete, pq é temporal)</li>	
+						<li>Linguagem semelhante ao SQL</li>
+						<li>Permite indexar séries</li>
+						<li>T.I.C.K - faz as consultas InfluxDB e gera relatórios  (docs.influxdata.com)</li>
+						<li>COm o Grafana, pode consolidar medições e realizar funções (aggregations, selections, </li>
+					</ul>
+				</section>
+				
+			
+				<section>
+					<h2>Trilha NoSQL (08/07)</h2>
+				</section>					
+				<section>				
+					<h2>No SQL</h2>
+					<ul>
+						<li>www.leavcom/pdf/NoSQL.pdf</li>
+						<li>eng.uber.com/schemaless-part-one</li>
+						<li>Não relacional</li>
+						<li>Baseado em JSON</li>	
+						<li>JSON é um tipo em SQL, como INTEGER</li>
+						<li>É possível fazer consultas e updates sobre o JSON</li>
+					</ul>
+				</section>	
+				
+				<section>				
+					<h2>Dynamob em C#</h2>
+					<ul>
+
+						<li>Banco como serviço da Amazon</li>
+						<li>Cada linha pode ter um numero diferente de colunas</li>
+						<li>Key/value/column oriented</li>
+						<li>columns-> attribute; row -> item</li>	
+						<li>Se repetir o insert, entende como update</li>
+						<li>Consultas realizadas como requisiçãoao server da Amazon</li>
+						<li><b>Tem que pensar nas queries antes de projetar</b></li>
+						<li>O join é feito pelo programador (no C#)</li>
+					</ul>
+				</section>	
+
+				<section>				
+					<h2>Cassandra</h2>
+					<ul>
+						<li>cassandra.apache.org</li>
+						<li>Schema -> keyspace</li>
+						<li>Table -> Column family</li>
+						<li>Primary keys - row key</li>	
+						<li>SQL -> CQL</li>
+						<li>Se usar driver kundera (JPA), pode continuar usando annotations do hibernate</li>
+					</ul>
+				</section>					
+				
+				<section>				
+					<h2>Cassandra</h2>
+					<ul>
+						<li>Cqlsh - prompt para consultas cassandra</li>
+						<li>trabalha com memtabel e depois salva em  disco (operação de flush)</li>
+						<li>Mantém histórico de dados (como DB temporal)</li>
+					</ul>
+				</section>	
+				
+				<section>				
+					<h2>Cassandra - Modelagem</h2>
+					<ul>
+						<li>Query driven</li>
+						<ul>
+							<li>Uma entidade por consulta</li>
+							<li>Tabelas retornam dados pré ordenados</li>
+							<li>Duplicação de dados - melhor duplicar que fazer join, pois é mais escalável</li>
+							<li>tem tipos multivalorados (collections), mas tem que ser pouscos dados (até 64K)</li>
+						</ul>
+						
+						<li>Time series</li>
+						<ul>
+							<li>Tem uma rowkey e suas colunas</li>
+							<li>Tem timestamp</li>
+							<li>Para coleta de dados ao longo do tempo</li>
+							<li>armazenado em uma única linha</li>
+						</ul>
+						
+						<li>Particionamento de dados</li>
+						<ul>
+							<li>Cuidado com partições do disco!</li>
+							<li>A linha tem que vaber em uma partição (tem cálculo para isso, que varia)</li>
+							<li>Problemas de partição causam System Failuer (solução: usar buckets)</li>
+						</ul>
+
+					</ul>
+				</section>
+				
+				<section>				
+					<h2>MongoDB</h2>
+					<ul>
+						<li>Representação de dados geoespaciais </li>
+						<li>Documentos codificados em binário</li>
+						<li>GeoJSON - pardão aberto para codificar estruturas de dados (points, multipoints, polygons)</li>
+					</ul>
+				</section>	
+				
+				<section>				
 					<h2></h2>
 					<ul>
 
 						<li></li>
 						<li></li>
 						<li></li>
+						<li></li>	
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
 						<li></li>						
 					</ul>
 				</section>					
-
-
-				<section>
-					<h2 align="left">Slides</h2>
-					<p>
-						Not a coder? Not a problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slides.com" target="_blank">http://slides.com</a>.
-					</p>
-					
-					<li></li>
-				</section>
-
-				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
-				</section>
-
-				<section>
-					<h2>Touch Optimized</h2>
-					<p>
-						Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
-					</p>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
-
-						Write content using inline or external Markdown.
-						Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-
-						```
-						<section data-markdown>
-						  ## Markdown support
-
-						  Write content using inline or external Markdown.
-						  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
-				</section>
-
-				<section>
-					<section id="fragments">
-						<h2>Fragments</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
-
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
-					</section>
-					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's different types of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment fade-up">fade-up (also down, left and right!)</p>
-						<p class="fragment current-visible">current-visible</p>
-						<p>Highlight <span class="fragment highlight-red">red</span> <span class="fragment highlight-blue">blue</span> <span class="fragment highlight-green">green</span></p>
-					</section>
-				</section>
-
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=slide#/transitions">Slide</a> -
-						<a href="?transition=convex#/transitions">Convex</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a>
-					</p>
-				</section>
-
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						reveal.js comes with a few themes built in: <br>
-						<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a> <br>
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/blood.css'); return false;">Blood</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
-					</p>
-				</section>
-
-				<section>
-					<section data-background="#dddddd">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code class="hljs">&lt;section data-background="image.png"&gt;</code></pre>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Tiled Backgrounds</h2>
-						<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-					</section>
-					<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-							<h2>Video Backgrounds</h2>
-							<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
-						</div>
-					</section>
-					<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
-						<h2>... and GIFs!</h2>
-					</section>
-				</section>
-
-				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						Different background transitions are available via the backgroundTransition option. This one's called "zoom".
-					</p>
-					<pre><code class="hljs">Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
-				</section>
-
-				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						You can override background transitions per-slide.
-					</p>
-					<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
-				</section>
-
-				<section>
-					<h2>Pretty Code</h2>
-					<pre><code class="hljs" data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
-
-    var nodes = document.querySelectorAll( selector );
-
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
-
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
-}
-					</code></pre>
-					<p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-				</section>
-
-				<section>
-					<h2>Marvelous List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
-
-				<section>
-					<h2>Tabular Tables</h2>
-					<table>
-						<thead>
-							<tr>
-								<th>Item</th>
-								<th>Value</th>
-								<th>Quantity</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Apples</td>
-								<td>$1</td>
-								<td>7</td>
-							</tr>
-							<tr>
-								<td>Lemonade</td>
-								<td>$2</td>
-								<td>18</td>
-							</tr>
-							<tr>
-								<td>Bread</td>
-								<td>$3</td>
-								<td>2</td>
-							</tr>
-						</tbody>
-					</table>
-				</section>
-
-				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-					</blockquote>
-				</section>
-
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/2/3">like this</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Speaker View</h2>
-					<p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
-					<p>Press the <em>S</em> key to try it out.</p>
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
-				</section>
-
-				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
-					<iframe data-src="https://www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
-				</section>
-
-				<section>
-					<h2>Global State</h2>
-					<p>
-						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-						will be added as a class to the document element when the slide is open. This lets you
-						apply broader style changes, like switching the page background.
-					</p>
-				</section>
-
-				<section data-state="customevent">
-					<h2>State Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
-Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
-				</section>
-
-				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
-					</p>
-				</section>
-
-				<section>
-					<h2>Much more</h2>
-					<ul>
-						<li>Right-to-left support</li>
-						<li><a href="https://github.com/hakimel/reveal.js#api">Extensive JavaScript API</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#auto-sliding">Auto-progression</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#parallax-background">Parallax backgrounds</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#keyboard-bindings">Custom keyboard bindings</a></li>
-					</ul>
-				</section>
-
-				<section style="text-align: left;">
-					<h1>THE END</h1>
-					<p>
-						- <a href="http://slides.com">Try the online editor</a> <br>
-						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
-					</p>
-				</section>
-
+				
 			</div>
 
 		</div>
