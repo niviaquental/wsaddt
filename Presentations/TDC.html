@@ -420,7 +420,7 @@
 						<li>Linguagem semelhante ao SQL</li>
 						<li>Permite indexar séries</li>
 						<li>T.I.C.K - faz as consultas InfluxDB e gera relatórios  (docs.influxdata.com)</li>
-						<li>COm o Grafana, pode consolidar medições e realizar funções (aggregations, selections, </li>
+						<li>Com o Grafana, pode consolidar medições e realizar funções (aggregations, selections, transformations, etc) </li>
 					</ul>
 				</section>
 				
@@ -473,6 +473,12 @@
 						<li>Cqlsh - prompt para consultas cassandra</li>
 						<li>trabalha com memtabel e depois salva em  disco (operação de flush)</li>
 						<li>Mantém histórico de dados (como DB temporal)</li>
+						<li>Particionamento de dados</li>
+						<ul>
+							<li>Cuidado com partições do disco!</li>
+							<li>A linha tem que vaber em uma partição (tem cálculo para isso, que varia)</li>
+							<li>Problemas de partição causam System Failuer (solução: usar buckets)</li>
+						</ul>
 					</ul>
 				</section>	
 				
@@ -495,12 +501,7 @@
 							<li>armazenado em uma única linha</li>
 						</ul>
 						
-						<li>Particionamento de dados</li>
-						<ul>
-							<li>Cuidado com partições do disco!</li>
-							<li>A linha tem que vaber em uma partição (tem cálculo para isso, que varia)</li>
-							<li>Problemas de partição causam System Failuer (solução: usar buckets)</li>
-						</ul>
+
 
 					</ul>
 				</section>
@@ -515,22 +516,23 @@
 				</section>	
 				
 				<section>				
-					<h2></h2>
+					<h2>NoSQL baseado em grafos</h2>
 					<ul>
 
-						<li></li>
-						<li></li>
-						<li></li>
-						<li></li>	
-						<li></li>
-						<li></li>
-						<li></li>
-						<li></li>
-						<li></li>
-						<li></li>
-						<li></li>						
+						<li>TinkerPop -  usa linguagem 'Gremlin'</li>
+						<li>Titan - usado para grafos grandes</li>
+						<li>tinkerpop.apache.org</li>
+						<li>sql2gremlin.com</li>	
+						<li>Net4J - (codigosimples.org)</li>
+						<li>Permitem cruzamento de dados entre entidades aparentemente não relacionados</li>
+						<li>Rápido processamento</li>
+						<li>Caso Panama Papers</li>
 					</ul>
-				</section>					
+				</section>
+
+				<section>
+					<h2>E agora?</h2>
+				</section>				
 				
 			</div>
 
