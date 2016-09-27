@@ -324,11 +324,11 @@
 					<h2>Hibernate 5</h2>
 					<ul>
 
-						<li>Standard Service Register Builder mo lugar do SessionFactory</li>
+						<!--li>Standard Service Registry Builder no lugar do SessionFactory</li-->
 						<li>Novos tipos do Java 8 (DateTime APIs)</li>
 						<li>Tipos Genéricos do Java 5,6,7 e AutoCloseable (try/catch, não precisa mais dar close explicitamente)</li>
 						<li>ScrollableResults</li>						
-						<li>Bytecode augmentation</li>
+						<!--li>Bytecode augmentation</li-->
 						<li>Gerencia automaticamente os 2 lados do relacionamento</li>
 						<li>Attribute converter (Enum sem annotation @Enumerated)</li>
 					</ul>
@@ -337,12 +337,12 @@
 				<section>				
 					<h2>Hibernate 5</h2>
 					<ul>
-						<li>@Generatedvalue (strategy=auto) pode usar o UUID</li>						
+						<li>@Generatedvalue (strategy=auto) pode usar o <a href="http://stackoverflow.com/questions/6356834/using-hibernate-uuidgenerator-via-annotations">UUID </a></li>						
 						<li>Hibernate Search (permite consultas textuais, indexar blob (como no google) </li>
 						<li>Backend elastic search, lucene 5, melhorias de performance </li>						
-						<li>@Spatial, @INdexed, @Latitude @Logitude [Alô Heroes!]</li>						
+						<li>@Spatial, @Indexed, @Latitude @Logitude [Alô Heroes!]</li>						
 						<li>Hibernate  OGM (Object Grid Mapper) -  para banco nosql</li>
-						<li>Hibernate Envers (para versionamento e auditoria)</li>						
+						<li>Hibernate <a href="http://hibernate.org/orm/envers/">Envers</a> (para versionamento e auditoria)</li>						
 					</ul>
 				</section>				
 
@@ -369,12 +369,10 @@
 				<section>				
 					<h2>Polybase</h2>
 					<ul>
-
 						<li>Pode se conectar ao master do hadoop (nesse caso o polybase cria um job - jar - para rodar lá. Isso se chama pushdown)</li>
 						<li>Você configura como será a conversão de dados do storage para SQL (ex mapear CSV para &quot;Create Table&quot;)</li>
 						<li>Necessário criar credencial se o storage tiver autenticação kerberos</li>
-						<li>As tabelas criadas são temporárias</li>
-						
+						<li>As tabelas criadas são temporárias</li>						
 					</ul>
 				</section>
 
@@ -382,7 +380,7 @@
 					<h2>Medição e gerenciamento com SQL Server</h2>
 					<ul>
 						<li>Uso do perfmon (add counters -> physical disk)</li>
-						<li>Configurar o paralelismo do SQL Servercom 'maxdop' (se > 5, é pq usa paralelismo) e 'cost of threshold'(ver relação entre os 2)</li>
+						<li>Configurar o paralelismo do SQL Server com 'maxdop' (maximum degree of paralelism) e 'cost of threshold' (valor a partir do qual se paraleliza)</li>
 						<li>Por default, o SQL server é configurado para usar toda a memória da máquina</li>
 						<li>O ideal é delimitar (mas requer estudo de como você usa a máquina)</li>	
 						<li>SQL monitor</li>
@@ -462,11 +460,11 @@
 						<li>Cqlsh - prompt para consultas cassandra</li>
 						<li>trabalha com memtabel e depois salva em  disco (operação de flush)</li>
 						<li>Mantém histórico de dados (como DB temporal)</li>
-						<li>Particionamento de dados</li>
+						<li><a href="http://www.datastax.com/resources/tutorials/partitioning-and-replication">Particionamento de dados </a></li>
 						<ul>
 							<li>Cuidado com partições do disco!</li>
-							<li>A linha tem que vaber em uma partição (tem cálculo para isso, que varia)</li>
-							<li>Problemas de partição causam System Failuer (solução: usar buckets)</li>
+							<li>A linha tem que caber em uma partição (tem cálculo para isso, que varia)</li>
+							<li>Problemas de partição causam System Failure (solução: usar buckets)</li>
 						</ul>
 					</ul>
 				</section>	
@@ -479,7 +477,7 @@
 							<li>Uma entidade por consulta</li>
 							<li>Tabelas retornam dados pré ordenados</li>
 							<li>Duplicação de dados - melhor duplicar que fazer join, pois é mais escalável</li>
-							<li>tem tipos multivalorados (collections), mas tem que ser pouscos dados (até 64K)</li>
+							<li>Tem tipos multivalorados (collections), mas tem que ser poucos dados (até 64K)</li>
 						</ul>
 						
 						<li>Time series</li>
