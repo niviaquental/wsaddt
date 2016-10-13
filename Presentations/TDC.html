@@ -354,6 +354,7 @@
 					<h2>Big data e OLTP juntos: Polybase</h2>
 					<ul>
 						<li>Windows azure blob storage - o cluster (HD Insight cluster) só serviria para processar os dados e não armazenar, barateando o custo de uso)</li>
+						<li>Armazene os resultados da sua consulta em seu SQL Server</li>
 						<li>Polybase</li>
 						<ul>
 							<li>Mapeia SQL Server com o ambiente de big data</li>
@@ -369,7 +370,7 @@
 				<section>				
 					<h2>Polybase</h2>
 					<ul>
-						<li>Pode se conectar ao master do hadoop (nesse caso o polybase cria um job - jar - para rodar lá. Isso se chama pushdown)</li>
+						<li>Pode se conectar ao master do <a href="https://azure.microsoft.com/en-us/documentation/articles/hdinsight-hadoop-introduction/">hadoop</a> (nesse caso o polybase cria um job - jar - para rodar lá. Isso se chama pushdown)</li>
 						<li>Você configura como será a conversão de dados do storage para SQL (ex mapear CSV para &quot;Create Table&quot;)</li>
 						<li>Necessário criar credencial se o storage tiver autenticação kerberos</li>
 						<li>As tabelas criadas são temporárias</li>						
@@ -458,7 +459,7 @@
 					<h2>Cassandra</h2>
 					<ul>
 						<li>Cqlsh - prompt para consultas cassandra</li>
-						<li>trabalha com memtabel e depois salva em  disco (operação de flush)</li>
+						<li>trabalha com memtable e depois salva em  disco (operação de flush)</li>
 						<li>Mantém histórico de dados (como DB temporal)</li>
 						<li><a href="http://www.datastax.com/resources/tutorials/partitioning-and-replication">Particionamento de dados </a></li>
 						<ul>
